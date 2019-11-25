@@ -18,86 +18,86 @@ import org.springframework.stereotype.Component;
 public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int e_id;//员工编号
+	private int e_id;//鍛樺伐缂栧彿
 	@Column(nullable=false)
-	private String	e_name;	 //varchar(255)姓名
+	private String	e_name;	 //varchar(255)濮撳悕
 	@Column(nullable=false)
-	private int	e_sex;	     //Int	性别
+	private int	e_sex;	     //Int	鎬у埆
 	@Column(nullable=false)
-	private int e_age;	//Int	年龄
+	private int e_age;	//Int	骞撮緞
 	@Column(nullable=false)
 	private String e_email;	//varchar(255)	Email
 	@Column(nullable=false)
-	private String e_phone;	//varchar(255)	电话号
+	private String e_phone;	//varchar(255)	鐢佃瘽鍙
 	@Column(nullable=false)
-	private String e_qq;	//varchar(255)	QQ号
+	private String e_qq;	//varchar(255)	QQ鍙
 	@Column(nullable=false)
-	private String	e_number;	//varchar(255)	手机号
+	private String	e_number;	//varchar(255)	鎵嬫満鍙
 	@Column(nullable=false)
-	private String	e_adderss;	//varchar(255)	地址
+	private String	e_adderss;	//varchar(255)	鍦板潃
 	@Column(nullable=false)
-	private String	e_youbian;	//varchar(255)	邮编
+	private String	e_youbian;	//varchar(255)	閭紪
 
 	 @ManyToOne	  
 	 @JoinColumn(nullable=false,name="py_id",referencedColumnName = "py_id")
-	private Pay pay;	//	薪酬标准
+	private Pay pay;	//	钖叕鏍囧噯
 	@Column(nullable=false)
-	private int e_adminer;	//Int	登记人(当前登陆人id)
+	private int e_adminer;	//Int	鐧昏浜
 	@Column(nullable=false)
-	private String	e_nationality;	//varchar(255)	国籍
+	private String	e_nationality;	//varchar(255)	鍥界睄
 	@Column(nullable=false)
-	private String	e_birthaddress;	//varchar(255)	出生地
-	@Column(nullable=false)
-	@DateTimeFormat(pattern ="yyyy-MM-dd" )
-	private String e_birthday;	//Datetime	生日
-	@Column(nullable=false)
-	private String e_nation;	//varchar(255)	民族
-	@Column(nullable=false)
-	private String e_religion;	//varchar(255)	宗教信仰
-	@Column(nullable=false)
-	private String e_mianmao;	//varchar(255)	政治面貌
-	@Column(nullable=false)
-	private String e_shenfenid;	//varchar(255)	身份证号
-
-	@Column(nullable=false)
-	private String e_shebaophone;	//varchar(255)	社会保障号码
-
-	@Column(nullable=false)
-	private String e_education;	//varchar(255)	学历
-	@Column(nullable=false)
-	private int e_educationyear;	//int	教育年限
-	@Column(nullable=false)
-	private String e_educationmajor;	//varchar(255)	学历专业
-
-	@Column(nullable=false)
-	private String e_bank;	//varchar(255)	开户行
-	@Column(nullable=false)
-	private String e_banknumber;	//varchar(255)	银行卡号
+	private String	e_birthaddress;	//varchar(255)	
 	@Column(nullable=false)
 	@DateTimeFormat(pattern ="yyyy-MM-dd" )
-	private String e_admintime;	//Datetime	登记时间
+	private String e_birthday;	//Datetime	鐢熸棩
 	@Column(nullable=false)
-	private String e_speciality;	//varchar(255)	特长
+	private String e_nation;	//varchar(255)	姘戞棌
 	@Column(nullable=false)
-	private String e_hobby;	//varchar(255)	爱好
+	private String e_religion;	//varchar(255)
 	@Column(nullable=false)
-	private String e_photo;	//Images照片
+	private String e_mianmao;	//varchar(255)	鏀挎不闈㈣矊
 	@Column(nullable=false)
-	private int m_id;	//Int	机构
+	private String e_shenfenid;	//varchar(255)	韬唤璇佸彿
+
 	@Column(nullable=false)
-	private int p_id;	//Int	职称
+	private String e_shebaophone;	//varchar(255)	绀句細淇濋殰鍙风爜
+
 	@Column(nullable=false)
-	private String e_gerenluli;	//text个人履历
+	private String e_education;	//varchar(255)	瀛﹀巻
 	@Column(nullable=false)
-	private String e_family;	//text家庭关系
+	private int e_educationyear;	//int	鏁欒偛骞撮檺
 	@Column(nullable=false)
-	private String e_beizhu;	//text备注
+	private String e_educationmajor;	//varchar(255)	瀛﹀巻涓撲笟
+
 	@Column(nullable=false)
-	private int e_state;	//int员工状态
+	private String e_bank;	//varchar(255)	寮�鎴疯
+	@Column(nullable=false)
+	private String e_banknumber;	//varchar(255)	閾惰鍗″彿
+	@Column(nullable=false)
+	@DateTimeFormat(pattern ="yyyy-MM-dd" )
+	private String e_admintime;	//Datetime	鐧昏鏃堕棿
+	@Column(nullable=false)
+	private String e_speciality;	//varchar(255)	鐗归暱
+	@Column(nullable=false)
+	private String e_hobby;	//varchar(255)	鐖卞ソ
+	@Column(nullable=false)
+	private String e_photo;	//Images鐓х墖
+	@Column(nullable=false)
+	private int m_id;	//Int	鏈烘瀯
+	@Column(nullable=false)
+	private int p_id;	//Int	鑱岀О
+	@Column(nullable=false)
+	private String e_gerenluli;	//text涓汉灞ュ巻
+	@Column(nullable=false)
+	private String e_family;	//text瀹跺涵鍏崇郴
+	@Column(nullable=false)
+	private String e_beizhu;	//text澶囨敞
+	@Column(nullable=false)
+	private int e_state;	//int鍛樺伐鐘舵��
     @Column(nullable=true)
-	private int e_yuliui;	//Int预留字段1
+	private int e_yuliui;	//Int棰勭暀瀛楁1
     @Column(nullable=true)
-	private String e_yuliuis;	//varchar(255)预留字段2
+	private String e_yuliuis;	//varchar(255)棰勭暀瀛楁2
 	public int getE_id() {
 		return e_id;
 	}
