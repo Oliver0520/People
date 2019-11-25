@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -19,8 +21,9 @@ public class PayData {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int pd_id;//	Int	F	Id
-	@Column(nullable=false)
-	private int e_id;//	Int	F	员工编号
+	 @ManyToOne	  
+	 @JoinColumn(nullable=false,name="e_id",referencedColumnName = "e_id")
+	private Employee employee;//	Int	F	多对一的员工编号
 	@Column(nullable=false)
 	@DateTimeFormat(pattern ="yyyy-MM-dd" )
 	private String pd_time;//	Date	F	时间
@@ -43,12 +46,7 @@ public class PayData {
 	public void setPd_id(int pd_id) {
 		this.pd_id = pd_id;
 	}
-	public int getE_id() {
-		return e_id;
-	}
-	public void setE_id(int e_id) {
-		this.e_id = e_id;
-	}
+
 	public String getPd_time() {
 		return pd_time;
 	}
@@ -95,12 +93,18 @@ public class PayData {
 		this.pd_kouchu = pd_kouchu;
 	}
 
+	public Employee getEmployee() {
+		return employee;
+	}
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
 	public PayData() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "PayData [pd_id=" + pd_id + ", e_id=" + e_id + ", pd_time=" + pd_time + ", pd_reason=" + pd_reason
+		return "PayData [pd_id=" + pd_id + ", employee=" + employee + ", pd_time=" + pd_time + ", pd_reason=" + pd_reason
 				+ ", pd_Jiangli=" + pd_Jiangli + ", pd_xiaoji=" + pd_xiaoji + ", pd_kouchu=" + pd_kouchu
 				+ ", pd_yuliui=" + pd_yuliui + ", pd_yuliuis=" + pd_yuliuis + "]";
 	}

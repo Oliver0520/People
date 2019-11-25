@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,8 +19,9 @@ public class Transfer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int tr_id;//Id
-	@Column(nullable=false)
-	private int e_id;//	员工id
+	 @ManyToOne	  
+	 @JoinColumn(nullable=false,name="e_id",referencedColumnName = "e_id")	
+	private Employee employee;//	员工id
 	@Column(nullable=false)
 	private String e_name;//员工姓名
 	@Column(nullable=false)
@@ -55,12 +58,7 @@ public class Transfer {
 	public void setTr_id(int tr_id) {
 		this.tr_id = tr_id;
 	}
-	public int getE_id() {
-		return e_id;
-	}
-	public void setE_id(int e_id) {
-		this.e_id = e_id;
-	}
+
 	public String getE_name() {
 		return e_name;
 	}
@@ -146,12 +144,18 @@ public class Transfer {
 		this.tr_yuliuis = tr_yuliuis;
 	}
 	
+	public Employee getEmployee() {
+		return employee;
+	}
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
 	public Transfer() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "Transfer [tr_id=" + tr_id + ", e_id=" + e_id + ", e_name=" + e_name + ", tr_Registrattime="
+		return "Transfer [tr_id=" + tr_id + ", employee=" + employee + ", e_name=" + e_name + ", tr_Registrattime="
 				+ tr_Registrattime + ", tr_Registrant=" + tr_Registrant + ", tr_Audittime=" + tr_Audittime
 				+ ", tr_Auditor=" + tr_Auditor + ", m_name=" + m_name + ", p_name=" + p_name + ", py_name=" + py_name
 				+ ", tr_mechanism=" + tr_mechanism + ", tr_position=" + tr_position + ", tr_pay=" + tr_pay

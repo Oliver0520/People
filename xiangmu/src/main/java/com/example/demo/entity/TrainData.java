@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,8 +19,9 @@ public class TrainData {//培训日志表
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int td_id;//	Int	F	编号
-	@Column(nullable=false)
-	private int tp_id;//	Int	F	所属培训计划编号
+	 @ManyToOne	  
+	 @JoinColumn(nullable=false,name="tp_id",referencedColumnName = "tp_id") 	
+	private TrainingPlan trainingPlan;//多对一所属培训计划编号
 	@Column(nullable=false)
 	@DateTimeFormat(pattern ="yyyy-MM-dd" )
 	private String td_itime;//	记录时间、
@@ -41,12 +44,7 @@ public class TrainData {//培训日志表
 	public void setTd_id(int td_id) {
 		this.td_id = td_id;
 	}
-	public int getTp_id() {
-		return tp_id;
-	}
-	public void setTp_id(int tp_id) {
-		this.tp_id = tp_id;
-	}
+
 	public String getTd_itime() {
 		return td_itime;
 	}
@@ -90,14 +88,21 @@ public class TrainData {//培训日志表
 		this.td_yuliuis = td_yuliuis;
 	}
 	
+	public TrainingPlan getTrainingPlan() {
+		return trainingPlan;
+	}
+	public void setTrainingPlan(TrainingPlan trainingPlan) {
+		this.trainingPlan = trainingPlan;
+	}
 	public TrainData() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "Traindata [td_id=" + td_id + ", tp_id=" + tp_id + ", td_itime=" + td_itime + ", td_didian=" + td_didian
-				+ ", td_neirong=" + td_neirong + ", td_mudi=" + td_mudi + ", td_xiaoguo=" + td_xiaoguo + ", td_yuliui="
-				+ td_yuliui + ", td_yuliuis=" + td_yuliuis + "]";
+		return "TrainData [td_id=" + td_id + ", trainingPlan=" + trainingPlan + ", td_itime=" + td_itime
+				+ ", td_didian=" + td_didian + ", td_neirong=" + td_neirong + ", td_mudi=" + td_mudi + ", td_xiaoguo="
+				+ td_xiaoguo + ", td_yuliui=" + td_yuliui + ", td_yuliuis=" + td_yuliuis + "]";
 	}
+
 
 }

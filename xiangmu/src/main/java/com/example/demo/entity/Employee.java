@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -36,8 +38,9 @@ public class Employee {
 	@Column(nullable=false)
 	private String	e_youbian;	//varchar(255)	邮编
 
-	@Column(nullable=false)
-	private int py_id;	//	薪酬标准
+	 @ManyToOne	  
+	 @JoinColumn(nullable=false,name="py_id",referencedColumnName = "py_id")
+	private Pay pay;	//	薪酬标准
 	@Column(nullable=false)
 	private int e_adminer;	//Int	登记人(当前登陆人id)
 	@Column(nullable=false)
@@ -222,12 +225,7 @@ public class Employee {
 	public void setE_educationmajor(String e_educationmajor) {
 		this.e_educationmajor = e_educationmajor;
 	}
-	public int getPy_id() {
-		return py_id;
-	}
-	public void setPy_id(int py_id) {
-		this.py_id = py_id;
-	}
+
 	public String getE_bank() {
 		return e_bank;
 	}
@@ -318,20 +316,30 @@ public class Employee {
 	public void setE_yuliuis(String e_yuliuis) {
 		this.e_yuliuis = e_yuliuis;
 	}
+	public Pay getPay() {
+		return pay;
+	}
+	public void setPay(Pay pay) {
+		this.pay = pay;
+	}
+	public Employee() {
+		super();
+	}
 	@Override
 	public String toString() {
-		return "employee [e_id=" + e_id + ", e_name=" + e_name + ", e_sex=" + e_sex + ", e_Email=" + e_email
-				+ ", e_phone=" + e_phone + ", e_qq=" + e_qq + ", e_number=" + e_number + ", e_adderss=" + e_adderss
-				+ ", e_youbian=" + e_youbian + ", e_nationality=" + e_nationality + ", e_birthaddress=" + e_birthaddress
-				+ ", e_birthday=" + e_birthday + ", e_nation=" + e_nation + ", e_religion=" + e_religion
-				+ ", e_mianmao=" + e_mianmao + ", e_shenfenid=" + e_shenfenid + ", e_shebaophone=" + e_shebaophone
-				+ ", e_age=" + e_age + ", e_education=" + e_education + ", e_educationyear=" + e_educationyear
-				+ ", e_educationmajor=" + e_educationmajor + ", py_id=" + py_id + ", e_bank=" + e_bank
-				+ ", e_banknumber=" + e_banknumber + ", e_adminer=" + e_adminer + ", e_admintime=" + e_admintime
-				+ ", e_speciality=" + e_speciality + ", e_hobby=" + e_hobby + ", e_photo=" + e_photo + ", m_id=" + m_id
-				+ ", p_id=" + p_id + ", e_gerenluli=" + e_gerenluli + ", e_family=" + e_family + ", e_beizhu="
-				+ e_beizhu + ", e_state=" + e_state + ", e_yuliui=" + e_yuliui + ", e_yuliuis=" + e_yuliuis + "]";
+		return "Employee [e_id=" + e_id + ", e_name=" + e_name + ", e_sex=" + e_sex + ", e_age=" + e_age + ", e_email="
+				+ e_email + ", e_phone=" + e_phone + ", e_qq=" + e_qq + ", e_number=" + e_number + ", e_adderss="
+				+ e_adderss + ", e_youbian=" + e_youbian + ", pay=" + pay + ", e_adminer=" + e_adminer
+				+ ", e_nationality=" + e_nationality + ", e_birthaddress=" + e_birthaddress + ", e_birthday="
+				+ e_birthday + ", e_nation=" + e_nation + ", e_religion=" + e_religion + ", e_mianmao=" + e_mianmao
+				+ ", e_shenfenid=" + e_shenfenid + ", e_shebaophone=" + e_shebaophone + ", e_education=" + e_education
+				+ ", e_educationyear=" + e_educationyear + ", e_educationmajor=" + e_educationmajor + ", e_bank="
+				+ e_bank + ", e_banknumber=" + e_banknumber + ", e_admintime=" + e_admintime + ", e_speciality="
+				+ e_speciality + ", e_hobby=" + e_hobby + ", e_photo=" + e_photo + ", m_id=" + m_id + ", p_id=" + p_id
+				+ ", e_gerenluli=" + e_gerenluli + ", e_family=" + e_family + ", e_beizhu=" + e_beizhu + ", e_state="
+				+ e_state + ", e_yuliui=" + e_yuliui + ", e_yuliuis=" + e_yuliuis + "]";
 	}
+
 
 	
 	

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 @Table(name="pay")
-public class Pay {
+public class Pay {//标准薪酬表
 	/*
 	 * @ManyToOne
 	 * 

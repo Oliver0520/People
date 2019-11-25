@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -16,12 +18,14 @@ public class Trainers {//被培训人员表
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ts_id;//编号
-	@Column(nullable=false)
-	private int tp_id;//培训计划编号
+	 @ManyToOne	  
+	 @JoinColumn(nullable=false,name="tp_id",referencedColumnName = "tp_id")
+	private TrainingPlan trainingplan;//多对一的培训计划编号
 	@Column(nullable=false)
 	private int Ts_zhuangtai;//（考核中，考核失败（定时清除失败的，并发送通知），考核通过，等待开始，培训中，培训结束）
-	@Column(nullable=false)
-	private int e_id;//人员编号
+	 @ManyToOne	  
+	 @JoinColumn(nullable=false,name="e_id",referencedColumnName = "e_id")
+	private Employee employee;//人员编号
 	@Column(nullable=false)
 	private String ts_qingkuang;//考核情况
 	@Column(nullable=true)
@@ -34,24 +38,14 @@ public class Trainers {//被培训人员表
 	public void setTs_id(int ts_id) {
 		this.ts_id = ts_id;
 	}
-	public int getTp_id() {
-		return tp_id;
-	}
-	public void setTp_id(int tp_id) {
-		this.tp_id = tp_id;
-	}
+
 	public int getTs_zhuangtai() {
 		return Ts_zhuangtai;
 	}
 	public void setTs_zhuangtai(int ts_zhuangtai) {
 		Ts_zhuangtai = ts_zhuangtai;
 	}
-	public int getE_id() {
-		return e_id;
-	}
-	public void setE_id(int e_id) {
-		this.e_id = e_id;
-	}
+
 	public String getTs_qingkuang() {
 		return ts_qingkuang;
 	}
@@ -71,13 +65,27 @@ public class Trainers {//被培训人员表
 		this.ts_yuliuis = ts_yuliuis;
 	}
 	
+	public TrainingPlan getTrainingplan() {
+		return trainingplan;
+	}
+	public void setTrainingplan(TrainingPlan trainingplan) {
+		this.trainingplan = trainingplan;
+	}
+	public Employee getEmployee() {
+		return employee;
+	}
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
 	public Trainers() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "Trainers [ts_id=" + ts_id + ", tp_id=" + tp_id + ", Ts_zhuangtai=" + Ts_zhuangtai + ", e_id=" + e_id
-				+ ", ts_qingkuang=" + ts_qingkuang + ", ts_yuliui=" + ts_yuliui + ", ts_yuliuis=" + ts_yuliuis + "]";
+		return "Trainers [ts_id=" + ts_id + ", trainingplan=" + trainingplan + ", Ts_zhuangtai=" + Ts_zhuangtai
+				+ ", employee=" + employee + ", ts_qingkuang=" + ts_qingkuang + ", ts_yuliui=" + ts_yuliui
+				+ ", ts_yuliuis=" + ts_yuliuis + "]";
 	}
+
 
 }
