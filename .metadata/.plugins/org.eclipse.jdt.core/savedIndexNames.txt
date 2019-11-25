@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+F:\office\GitWeb\People\.metadata\.plugins\org.eclipse.jdt.core
