@@ -15,19 +15,19 @@ import org.springframework.stereotype.Component;
 public class Mechanism {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int	m_id;//机构ID
+	private Integer	m_id;//机构ID
 	@Column(nullable=false)
 	private String m_name;//机构名称
 	@Column(nullable=false)
-	private int m_parentid;//机构父ID
+	private Integer m_parentid;//机构父ID
 	@Column(nullable=true)
-	private int m_yuliui;//预留字段1
+	private Integer m_yuliui;//预留字段1
 	@Column(nullable=true)
 	private String m_yulius;//预留字段2
-	public int getM_id() {
+	public Integer getM_id() {
 		return m_id;
 	}
-	public void setM_id(int m_id) {
+	public void setM_id(Integer m_id) {
 		this.m_id = m_id;
 	}
 	public String getM_name() {
@@ -36,16 +36,16 @@ public class Mechanism {
 	public void setM_name(String m_name) {
 		this.m_name = m_name;
 	}
-	public int getM_parentid() {
+	public Integer getM_parentid() {
 		return m_parentid;
 	}
-	public void setM_parentid(int m_parentid) {
+	public void setM_parentid(Integer m_parentid) {
 		this.m_parentid = m_parentid;
 	}
-	public int getM_yuliui() {
+	public Integer getM_yuliui() {
 		return m_yuliui;
 	}
-	public void setM_yuliui(int m_yuliui) {
+	public void setM_yuliui(Integer m_yuliui) {
 		this.m_yuliui = m_yuliui;
 	}
 	public String getM_yulius() {
@@ -54,16 +54,11 @@ public class Mechanism {
 	public void setM_yulius(String m_yulius) {
 		this.m_yulius = m_yulius;
 	}
-	
-	public Mechanism() {
-		super();
-	}
 	@Override
 	public String toString() {
 		return "Mechanism [m_id=" + m_id + ", m_name=" + m_name + ", m_parentid=" + m_parentid + ", m_yuliui="
 				+ m_yuliui + ", m_yulius=" + m_yulius + "]";
 	}
-	
 	
 
 }
