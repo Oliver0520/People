@@ -15,19 +15,19 @@ import org.springframework.stereotype.Component;
 public class QuestionType {//题目分类
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int qt_id;//分类编号
+	private Integer qt_id;//分类编号
 	@Column(nullable=false)
 	private String qt_name;//	分类名称
 	@Column(nullable=false)
-	private int qt_parentid;//父类id
+	private Integer qt_parentid;//父类id
 	@Column(nullable=true)
-	private int qt_yuliui;//预留字段1
+	private Integer qt_yuliui;//预留字段1
 	@Column(nullable=true)
 	private String qt_yuliuis;//预留字段2
-	public int getQt_id() {
+	public Integer getQt_id() {
 		return qt_id;
 	}
-	public void setQt_id(int qt_id) {
+	public void setQt_id(Integer qt_id) {
 		this.qt_id = qt_id;
 	}
 	public String getQt_name() {
@@ -36,16 +36,16 @@ public class QuestionType {//题目分类
 	public void setQt_name(String qt_name) {
 		this.qt_name = qt_name;
 	}
-	public int getQt_parentid() {
+	public Integer getQt_parentid() {
 		return qt_parentid;
 	}
-	public void setQt_parentid(int qt_parentid) {
+	public void setQt_parentid(Integer qt_parentid) {
 		this.qt_parentid = qt_parentid;
 	}
-	public int getQt_yuliui() {
+	public Integer getQt_yuliui() {
 		return qt_yuliui;
 	}
-	public void setQt_yuliui(int qt_yuliui) {
+	public void setQt_yuliui(Integer qt_yuliui) {
 		this.qt_yuliui = qt_yuliui;
 	}
 	public String getQt_yuliuis() {
@@ -54,14 +54,11 @@ public class QuestionType {//题目分类
 	public void setQt_yuliuis(String qt_yuliuis) {
 		this.qt_yuliuis = qt_yuliuis;
 	}
-	
-	public QuestionType() {
-		super();
-	}
 	@Override
 	public String toString() {
 		return "QuestionType [qt_id=" + qt_id + ", qt_name=" + qt_name + ", qt_parentid=" + qt_parentid + ", qt_yuliui="
 				+ qt_yuliui + ", qt_yuliuis=" + qt_yuliuis + "]";
 	}
+
 
 }
