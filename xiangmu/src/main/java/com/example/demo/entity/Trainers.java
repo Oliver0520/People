@@ -29,7 +29,7 @@ public class Trainers {//被培训人员表
 	@Column(nullable=false)
 	private String ts_qingkuang;//考核情况
 	@Column(nullable=true)
-	private int ts_yuliui;//预留字段x
+	private Integer ts_yuliui;//预留字段x
 	@Column(nullable=true)
 	private String ts_yuliuis;//预留字段y
 	public int getTs_id() {

@@ -36,7 +36,7 @@ public class PayData {
 	@Column(nullable=true,precision = 12, scale =2)
 	private BigDecimal pd_kouchu;//	Decimal	T	应扣金额
 	@Column(nullable=true)
-	private int pd_yuliui;//	int	T	预留字段x
+	private Integer pd_yuliui;//	int	T	预留字段x
 	@Column(nullable=true)
 	private String pd_yuliuis;//	varchar	T	预留字段y
 	

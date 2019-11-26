@@ -34,7 +34,7 @@ public class TrainData {//培训日志表
 	@Column(nullable=false)
 	private String td_xiaoguo;//培训效果
 	@Column(nullable=true)
-	private int td_yuliui;//	预留字段x
+	private Integer td_yuliui;//	预留字段x
 	@Column(nullable=true)
 	private String td_yuliuis;//预留字段y
 	

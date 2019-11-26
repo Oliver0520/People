@@ -38,7 +38,7 @@ public class TrainingPlan {//培训计划表
 	@Column(nullable=false)
 	private String tp_pingjia;//评价
 	@Column(nullable=true)
-	private int tp_yuliui;//预留字段x
+	private Integer tp_yuliui;//预留字段x
 	@Column(nullable=true)
 	private String tp_yuliuis;//预留字段y
 	public int getTp_id() {

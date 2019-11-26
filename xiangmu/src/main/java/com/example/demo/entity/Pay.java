@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,12 +25,12 @@ public class Pay {//标准薪酬表
 	 */
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private int py_id;	//编号（系统自动生成）
+private Integer py_id;	//编号（系统自动生成）
 @Column(nullable=false)
 private String py_name;	//薪酬名称
 @Column(nullable=false)
 @DateTimeFormat(pattern ="yyyy-MM-dd" )
-private String py_time	;//登记时间（系统自动生成）
+private Date py_time	;//登记时间（系统自动生成）
 @Column(nullable=false)
 private String py_formulate;	//制定人
 @Column(nullable=false)
@@ -51,18 +52,25 @@ private BigDecimal py_lunchallowance;	//午餐补助
 @Column(nullable=true,precision = 12, scale =2)
 private BigDecimal py_vehiclerepair;	//	车补
 @Column(nullable=true)
-private int py_yuliui;	//	预留字段x
+private Integer py_yuliui;	//	预留字段x
 @Column(nullable=true)
 private String py_yuliuis;	//	预留字段y
 
 
 
 
-public int getPy_id() {
+
+public Integer getPy_id() {
 	return py_id;
 }
-public void setPy_id(int py_id) {
+public void setPy_id(Integer py_id) {
 	this.py_id = py_id;
+}
+public Integer getPy_yuliui() {
+	return py_yuliui;
+}
+public void setPy_yuliui(Integer py_yuliui) {
+	this.py_yuliui = py_yuliui;
 }
 public String getPy_name() {
 	return py_name;
@@ -70,10 +78,11 @@ public String getPy_name() {
 public void setPy_name(String py_name) {
 	this.py_name = py_name;
 }
-public String getPy_time() {
+
+public Date getPy_time() {
 	return py_time;
 }
-public void setPy_time(String py_time) {
+public void setPy_time(Date py_time) {
 	this.py_time = py_time;
 }
 public String getPy_formulate() {
@@ -136,12 +145,7 @@ public BigDecimal getPy_vehiclerepair() {
 public void setPy_vehiclerepair(BigDecimal py_vehiclerepair) {
 	this.py_vehiclerepair = py_vehiclerepair;
 }
-public int getPy_yuliui() {
-	return py_yuliui;
-}
-public void setPy_yuliui(int py_yuliui) {
-	this.py_yuliui = py_yuliui;
-}
+
 public String getPy_yuliuis() {
 	return py_yuliuis;
 }

@@ -49,7 +49,7 @@ public class Transfer {
 	@Column(nullable=false)
 	private int  tr_state;//调动状态
 	@Column(nullable=true)
-	private int tr_yuliui;//预留字段x
+	private Integer tr_yuliui;//预留字段x
 	@Column(nullable=true)
 	private String tr_yuliuis;//预留字段y
 	public int getTr_id() {
