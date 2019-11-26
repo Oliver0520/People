@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,90 +20,90 @@ import org.springframework.stereotype.Component;
 public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int e_id;//员工编号
+	private Integer e_id;//鍛樺伐缂栧彿
 	@Column(nullable=false)
-	private String	e_name;	 //varchar(255)姓名
+	private String	e_name;	 //varchar(255)濮撳悕
 	@Column(nullable=false)
-	private int	e_sex;	     //Int	性别
+	private Integer	e_sex;	     //Integer	鎬у埆
 	@Column(nullable=false)
-	private int e_age;	//Int	年龄
+	private Integer e_age;	//Integer	骞撮緞
 	@Column(nullable=false)
 	private String e_email;	//varchar(255)	Email
 	@Column(nullable=false)
-	private String e_phone;	//varchar(255)	电话号
+	private String e_phone;	//varchar(255)	鐢佃瘽鍙�
 	@Column(nullable=false)
-	private String e_qq;	//varchar(255)	QQ号
+	private String e_qq;	//varchar(255)	QQ鍙�
 	@Column(nullable=false)
-	private String	e_number;	//varchar(255)	手机号
+	private String	e_number;	//varchar(255)	鎵嬫満鍙�
 	@Column(nullable=false)
-	private String	e_adderss;	//varchar(255)	地址
+	private String	e_adderss;	//varchar(255)	鍦板潃
 	@Column(nullable=false)
-	private String	e_youbian;	//varchar(255)	邮编
+	private String	e_youbian;	//varchar(255)	閭紪
 
 	 @ManyToOne	  
 	 @JoinColumn(nullable=false,name="py_id",referencedColumnName = "py_id")
-	private Pay pay;	//	薪酬标准
+	private Pay pay;	//	钖叕鏍囧噯
 	@Column(nullable=false)
-	private int e_adminer;	//Int	登记人(当前登陆人id)
+	private Integer e_adminer;	//Integer	鐧昏浜�(褰撳墠鐧婚檰浜篿d)
 	@Column(nullable=false)
-	private String	e_nationality;	//varchar(255)	国籍
+	private String	e_nationality;	//varchar(255)	鍥界睄
 	@Column(nullable=false)
-	private String	e_birthaddress;	//varchar(255)	出生地
-	@Column(nullable=false)
-	@DateTimeFormat(pattern ="yyyy-MM-dd" )
-	private String e_birthday;	//Datetime	生日
-	@Column(nullable=false)
-	private String e_nation;	//varchar(255)	民族
-	@Column(nullable=false)
-	private String e_religion;	//varchar(255)	宗教信仰
-	@Column(nullable=false)
-	private String e_mianmao;	//varchar(255)	政治面貌
-	@Column(nullable=false)
-	private String e_shenfenid;	//varchar(255)	身份证号
-
-	@Column(nullable=false)
-	private String e_shebaophone;	//varchar(255)	社会保障号码
-
-	@Column(nullable=false)
-	private String e_education;	//varchar(255)	学历
-	@Column(nullable=false)
-	private int e_educationyear;	//int	教育年限
-	@Column(nullable=false)
-	private String e_educationmajor;	//varchar(255)	学历专业
-
-	@Column(nullable=false)
-	private String e_bank;	//varchar(255)	开户行
-	@Column(nullable=false)
-	private String e_banknumber;	//varchar(255)	银行卡号
+	private String	e_birthaddress;	//varchar(255)	鍑虹敓鍦�
 	@Column(nullable=false)
 	@DateTimeFormat(pattern ="yyyy-MM-dd" )
-	private String e_admintime;	//Datetime	登记时间
+	private Date e_birthday;	//Datetime	鐢熸棩
 	@Column(nullable=false)
-	private String e_speciality;	//varchar(255)	特长
+	private String e_nation;	//varchar(255)	姘戞棌
 	@Column(nullable=false)
-	private String e_hobby;	//varchar(255)	爱好
+	private String e_religion;	//varchar(255)	瀹楁暀淇′话
 	@Column(nullable=false)
-	private String e_photo;	//Images照片
+	private String e_mianmao;	//varchar(255)	鏀挎不闈㈣矊
 	@Column(nullable=false)
-	private int m_id;	//Int	机构
+	private String e_shenfenid;	//varchar(255)	韬唤璇佸彿
+
 	@Column(nullable=false)
-	private int p_id;	//Int	职称
+	private String e_shebaophone;	//varchar(255)	绀句細淇濋殰鍙风爜
+
 	@Column(nullable=false)
-	private String e_gerenluli;	//text个人履历
+	private String e_education;	//varchar(255)	瀛﹀巻
 	@Column(nullable=false)
-	private String e_family;	//text家庭关系
+	private Integer e_educationyear;	//Integer	鏁欒偛骞撮檺
 	@Column(nullable=false)
-	private String e_beizhu;	//text备注
+	private String e_educationmajor;	//varchar(255)	瀛﹀巻涓撲笟
+
 	@Column(nullable=false)
-	private int e_state;	//int员工状态
+	private String e_bank;	//varchar(255)	寮�鎴疯
+	@Column(nullable=false)
+	private String e_banknumber;	//varchar(255)	閾惰鍗″彿
+	@Column(nullable=false)
+	@DateTimeFormat(pattern ="yyyy-MM-dd" )
+	private Date e_admintime;	//Datetime	鐧昏鏃堕棿
+	@Column(nullable=false)
+	private String e_speciality;	//varchar(255)	鐗归暱
+	@Column(nullable=false)
+	private String e_hobby;	//varchar(255)	鐖卞ソ
+	@Column(nullable=false)
+	private String e_photo;	//Images鐓х墖
+	@Column(nullable=false)
+	private Integer m_id;	//Integer	鏈烘瀯
+	@Column(nullable=false)
+	private Integer p_id;	//Integer	鑱岀О
+	@Column(nullable=false)
+	private String e_gerenluli;	//text涓汉灞ュ巻
+	@Column(nullable=false)
+	private String e_family;	//text瀹跺涵鍏崇郴
+	@Column(nullable=false)
+	private String e_beizhu;	//text澶囨敞
+	@Column(nullable=false)
+	private Integer e_state;	//Integer鍛樺伐鐘舵��
     @Column(nullable=true)
-	private int e_yuliui;	//Int预留字段1
+	private Integer e_yuliui;	//Integer棰勭暀瀛楁1
     @Column(nullable=true)
-	private String e_yuliuis;	//varchar(255)预留字段2
-	public int getE_id() {
+	private String e_yuliuis;	//varchar(255)棰勭暀瀛楁2
+	public Integer getE_id() {
 		return e_id;
 	}
-	public void setE_id(int e_id) {
+	public void setE_id(Integer e_id) {
 		this.e_id = e_id;
 	}
 	public String getE_name() {
@@ -110,13 +112,18 @@ public class Employee {
 	public void setE_name(String e_name) {
 		this.e_name = e_name;
 	}
-	public int getE_sex() {
+	public Integer getE_sex() {
 		return e_sex;
 	}
-	public void setE_sex(int e_sex) {
+	public void setE_sex(Integer e_sex) {
 		this.e_sex = e_sex;
 	}
-
+	public Integer getE_age() {
+		return e_age;
+	}
+	public void setE_age(Integer e_age) {
+		this.e_age = e_age;
+	}
 	public String getE_email() {
 		return e_email;
 	}
@@ -153,6 +160,18 @@ public class Employee {
 	public void setE_youbian(String e_youbian) {
 		this.e_youbian = e_youbian;
 	}
+	public Pay getPay() {
+		return pay;
+	}
+	public void setPay(Pay pay) {
+		this.pay = pay;
+	}
+	public Integer getE_adminer() {
+		return e_adminer;
+	}
+	public void setE_adminer(Integer e_adminer) {
+		this.e_adminer = e_adminer;
+	}
 	public String getE_nationality() {
 		return e_nationality;
 	}
@@ -165,10 +184,10 @@ public class Employee {
 	public void setE_birthaddress(String e_birthaddress) {
 		this.e_birthaddress = e_birthaddress;
 	}
-	public String getE_birthday() {
+	public Date getE_birthday() {
 		return e_birthday;
 	}
-	public void setE_birthday(String e_birthday) {
+	public void setE_birthday(Date e_birthday) {
 		this.e_birthday = e_birthday;
 	}
 	public String getE_nation() {
@@ -201,22 +220,16 @@ public class Employee {
 	public void setE_shebaophone(String e_shebaophone) {
 		this.e_shebaophone = e_shebaophone;
 	}
-	public int getE_age() {
-		return e_age;
-	}
-	public void setE_age(int e_age) {
-		this.e_age = e_age;
-	}
 	public String getE_education() {
 		return e_education;
 	}
 	public void setE_education(String e_education) {
 		this.e_education = e_education;
 	}
-	public int getE_educationyear() {
+	public Integer getE_educationyear() {
 		return e_educationyear;
 	}
-	public void setE_educationyear(int e_educationyear) {
+	public void setE_educationyear(Integer e_educationyear) {
 		this.e_educationyear = e_educationyear;
 	}
 	public String getE_educationmajor() {
@@ -225,7 +238,6 @@ public class Employee {
 	public void setE_educationmajor(String e_educationmajor) {
 		this.e_educationmajor = e_educationmajor;
 	}
-
 	public String getE_bank() {
 		return e_bank;
 	}
@@ -238,16 +250,10 @@ public class Employee {
 	public void setE_banknumber(String e_banknumber) {
 		this.e_banknumber = e_banknumber;
 	}
-	public int getE_adminer() {
-		return e_adminer;
-	}
-	public void setE_adminer(int e_adminer) {
-		this.e_adminer = e_adminer;
-	}
-	public String getE_admintime() {
+	public Date getE_admintime() {
 		return e_admintime;
 	}
-	public void setE_admintime(String e_admintime) {
+	public void setE_admintime(Date e_admintime) {
 		this.e_admintime = e_admintime;
 	}
 	public String getE_speciality() {
@@ -268,16 +274,16 @@ public class Employee {
 	public void setE_photo(String e_photo) {
 		this.e_photo = e_photo;
 	}
-	public int getM_id() {
+	public Integer getM_id() {
 		return m_id;
 	}
-	public void setM_id(int m_id) {
+	public void setM_id(Integer m_id) {
 		this.m_id = m_id;
 	}
-	public int getP_id() {
+	public Integer getP_id() {
 		return p_id;
 	}
-	public void setP_id(int p_id) {
+	public void setP_id(Integer p_id) {
 		this.p_id = p_id;
 	}
 	public String getE_gerenluli() {
@@ -298,16 +304,16 @@ public class Employee {
 	public void setE_beizhu(String e_beizhu) {
 		this.e_beizhu = e_beizhu;
 	}
-	public int getE_state() {
+	public Integer getE_state() {
 		return e_state;
 	}
-	public void setE_state(int e_state) {
+	public void setE_state(Integer e_state) {
 		this.e_state = e_state;
 	}
-	public int getE_yuliui() {
+	public Integer getE_yuliui() {
 		return e_yuliui;
 	}
-	public void setE_yuliui(int e_yuliui) {
+	public void setE_yuliui(Integer e_yuliui) {
 		this.e_yuliui = e_yuliui;
 	}
 	public String getE_yuliuis() {
@@ -315,15 +321,6 @@ public class Employee {
 	}
 	public void setE_yuliuis(String e_yuliuis) {
 		this.e_yuliuis = e_yuliuis;
-	}
-	public Pay getPay() {
-		return pay;
-	}
-	public void setPay(Pay pay) {
-		this.pay = pay;
-	}
-	public Employee() {
-		super();
 	}
 	@Override
 	public String toString() {
@@ -339,9 +336,7 @@ public class Employee {
 				+ ", e_gerenluli=" + e_gerenluli + ", e_family=" + e_family + ", e_beizhu=" + e_beizhu + ", e_state="
 				+ e_state + ", e_yuliui=" + e_yuliui + ", e_yuliuis=" + e_yuliuis + "]";
 	}
-
-
 	
-	
+    
 
 }
