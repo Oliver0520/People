@@ -20,7 +20,8 @@ public class EmployeeserviceImp implements Employeeservice{
 private EmployeeRep employeerep;
 
 public  Map<String, Object> selectEmployee(Integer page,Integer rows,Employee employee){
-	PageRequest fenye = PageRequest.of(page, (page-1)*rows);
+	page=page-1;
+	PageRequest fenye = PageRequest.of(page,rows);
 	ExampleMatcher tiaojian = ExampleMatcher.matching().withMatcher("e_name", GenericPropertyMatchers.contains());
 	Example<Employee> jieguo = Example.of(employee,tiaojian);
 	List<Employee> findAll = employeerep.findAll(jieguo);
